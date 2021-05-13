@@ -4,9 +4,9 @@
 
 //----------------------------------------------------------------------------
 
-void Jump::run(float unit)
+void Jump::run()
 {
-    glTranslatef(0.0f,unit,0.0f);
+    glTranslatef(0.0f,_unit,0.0f);
 }
 
 void Jump::setUnit(float unit) {
