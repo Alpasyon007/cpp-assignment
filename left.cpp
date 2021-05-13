@@ -9,6 +9,6 @@ void Left::run()
     glRotatef(90, 0, 0, 1);
 }
 
-void Left::setAngle(float angle) {
+void Left::setAngle(int angle) {
     _angle = angle;
 };

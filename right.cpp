@@ -6,10 +6,10 @@
 
 void Right::run()
 {
-    glRotatef(angle, 1, 0, 0);
+    glRotatef(_angle, 1, 0, 0);
 
 }
 
-void Right::setAngle(float angle) {
+void Right::setAngle(int angle) {
     _angle = angle;
 };
