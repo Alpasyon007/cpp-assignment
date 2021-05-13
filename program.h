@@ -5,6 +5,7 @@
 #include <GL/gl.h>
 #include <GL/glut.h>
 #include <vector>
+#include <utility>
 
 #include "left.h"
 #include "right.h"
@@ -12,11 +13,11 @@
 #include "jump.h"
 
 class Program {
+private:
 public:
+	std::vector<Command*> cmds;
 	void run();
-	//--------Teammember 1 to complete this section (class declaration) ----------
-
-	//----------------------------------------------------------------------------
+	void getInput(std::string);
 };
 
 

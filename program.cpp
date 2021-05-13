@@ -26,40 +26,81 @@ void Program::run() {
 	// 	glVertex3f( 1.0f,-1.0f, 0.0f);					// Bottom Right
 	// 	glVertex3f(-1.0f,-1.0f, 0.0f);					// Bottom Left
 	// glEnd();
-	Command* bptr;
-    Left l;
-	Forward f;
-	f.setUnit(4);
-	l.setAngle(90);
-    bptr = &l;
-	bptr->run();
-	bptr = &f;
-	bptr->run();
-	bptr = &l;
-	bptr->run();
-	bptr = &f;
-	bptr->run();
-	bptr = &l;
-	bptr->run();
-	bptr = &f;
-	bptr->run();
-	bptr = &l;
-	bptr->run();
-	bptr = &f;
-	bptr->run();
+	// Command* bptr;
+    // Left l;
+	// Forward f;
+	// f.setUnit(4);
+	// l.setAngle(90);
+    // bptr = &l;
+	// bptr->run();
+	// bptr = &f;
+	// bptr->run();
+	// bptr = &l;
+	// bptr->run();
+	// bptr = &f;
+	// bptr->run();
+	// bptr = &l;
+	// bptr->run();
+	// bptr = &f;
+	// bptr->run();
+	// bptr = &l;
+	// bptr->run();
+	// bptr = &f;
+	// bptr->run();
 	// forward.run(1);
+	for(auto* cmd: cmds) {
+		cmd->run();
+	}
 	//-------------------------------------------------------
 }
 
+// void Program::getInput(std::string input) {
+// 	_input = input;
+// }
+
 std::istream& operator>>(std::istream& in, Program& prog)
 {
-	//--------Teammember 1 to complete this section----------
-	std::string input;
-	for( std::string line; getline( in, line ); )
-	{
-		input += line + " ";
+	std::string command;
+	float value;
+	while(!in.eof()) {
+		static Command* cmd;
+		in >> command;
+		if(command == "FORWARD") {
+			static Forward f;
+			in >> value;
+			f.setUnit(value);
+			cmd = &f;
+			prog.cmds.push_back(cmd);
+		} else if (command == "RIGHT") {
+			static Right r;
+			in >> value;
+			r.setAngle(value);
+			cmd = &r;
+			prog.cmds.push_back(cmd);
+		} else if (command == "LEFT") {
+			static Left l;
+			in >> value;
+			l.setAngle(value);
+			cmd = &l;
+			prog.cmds.push_back(cmd);
+		} else if (command == "JUMP") {
+			static Jump j;
+			in >> value;
+			j.setUnit(value);
+			cmd = &j;
+			prog.cmds.push_back(cmd);
+		} else if (command == "REPEAT") {
+
+		}
 	}
-	std::cout << input << std::endl;
+	//--------Teammember 1 to complete this section----------
+	// std::string input;
+	// for( std::string line; getline( in, line ); )
+	// {
+	// 	input += line + " ";
+	// }
+	// prog.getInput(input);
+	// std::cout << input << std::endl;
 	//-------------------------------------------------------
 }
 
