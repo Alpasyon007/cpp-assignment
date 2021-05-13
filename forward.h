@@ -7,11 +7,13 @@
 class Forward:public Command
 {
     private:
+        float _unit = 0;
         //float newPos [3] = {0.0f, 0.0f, 0.0f};
     
     public:
         //float currentPos [3] = {0.0f, 0.0f, 0.0f};
-        void run(float unit);
+        void run();
+        void setUnit(float);
 };
 //----------------------------------------------------------------------------
 

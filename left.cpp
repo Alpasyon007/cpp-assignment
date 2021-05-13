@@ -4,7 +4,7 @@
 
 //----------------------------------------------------------------------------
 
-void Left::run(int angle)
+void Left::run()
 {
     // direction -= directionLeft;
     // if (direction < 0)
@@ -12,5 +12,5 @@ void Left::run(int angle)
     //     direction +360;
     // }
 
-    glRotatef(angle, 0, 0, 1);
+    glRotatef(90, 0, 0, 1);
 }

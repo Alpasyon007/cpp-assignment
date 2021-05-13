@@ -7,7 +7,7 @@
 class Left:public Command
 {
     public:
-        void run(int angle);
+        void run();
 };
 //----------------------------------------------------------------------------
 
