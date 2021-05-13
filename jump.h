@@ -5,6 +5,12 @@
 
 //--------Teammember 3 to complete this section (class declaration) ----------
 
+class Jump:public Command
+{
+    public:
+        void run(float unit);
+};
+
 //----------------------------------------------------------------------------
 
 
