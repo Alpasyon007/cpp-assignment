@@ -7,8 +7,13 @@
 //--------Teammember 3 to complete this section (class declaration) ----------
 class Right:public Command
 {
+    private:
+        float _angle = 0;
+
     public:
-        void run(int angle);
+        void run();
+        void setAngle(int);
+
 };
 //----------------------------------------------------------------------------
 

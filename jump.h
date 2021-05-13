@@ -7,8 +7,12 @@
 
 class Jump:public Command
 {
+    private:
+        float _unit = 0;
+
     public:
-        void run(float unit);
+        void run();
+        void setUnit(float);
 };
 
 //----------------------------------------------------------------------------

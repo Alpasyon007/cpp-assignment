@@ -4,14 +4,12 @@
 
 //----------------------------------------------------------------------------
 
-void Right::run(int angle)
+void Right::run()
 {
-    // direction += directionRight;
-    // if (direction > 360)
-    // {
-    //     direction - 360;
-    // }
-
     glRotatef(angle, 1, 0, 0);
 
 }
+
+void Right::setAngle(float angle) {
+    _angle = angle;
+};
