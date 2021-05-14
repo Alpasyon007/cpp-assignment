@@ -7,12 +7,14 @@
 
 class Jump:public Command
 {
-    private:
-        float _unit = 0;
+    // private:
+    //     float _unit = 0;
 
     public:
+        Jump();
         void run();
-        void setUnit(float);
+        //void setUnit(float); comment domment wajkfsbvmx
+        friend std::istream& operator >> (std::istream& in, Jump& j);
 };
 
 //----------------------------------------------------------------------------

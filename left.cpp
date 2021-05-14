@@ -6,9 +6,15 @@
 
 void Left::run()
 {
-    glRotatef(90, 0, 0, 1);
+    glRotatef(value, 0, 0, 1);
 }
 
-void Left::setAngle(int angle) {
-    _angle = angle;
-};
+// void Left::setAngle(float angle) {
+//     _angle = angle;
+// };
+
+std::istream& operator>>(std::istream& in, Left& l)
+{
+    in >> l.value;
+    return in;
+}

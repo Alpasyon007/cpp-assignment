@@ -7,13 +7,13 @@
 class Forward:public Command
 {
     private:
-        float _unit = 0;
-        //float newPos [3] = {0.0f, 0.0f, 0.0f};
+        //float _unit = 0;
     
     public:
-        //float currentPos [3] = {0.0f, 0.0f, 0.0f};
+        Forward();
         void run();
-        void setUnit(float);
+       // void setUnit(float);
+       friend std::istream& operator >> (std::istream& in, Forward& fwd);
 };
 //----------------------------------------------------------------------------
 

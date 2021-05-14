@@ -7,11 +7,12 @@
 class Left:public Command
 {
     private:
-        float _angle = 0;
+        //float _angle = 0;
 
     public:
         void run();
-        void setAngle(int);
+       // void setAngle(int);
+       friend std::istream& operator >> (std::istream& in, Left& l);
 };
 //----------------------------------------------------------------------------
 

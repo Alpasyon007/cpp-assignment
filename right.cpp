@@ -6,10 +6,16 @@
 
 void Right::run()
 {
-    glRotatef(_angle, 1, 0, 0);
+    glRotatef(value, 1, 0, 0);
 
 }
 
-void Right::setAngle(int angle) {
-    _angle = angle;
-};
+// void Right::setAngle(float angle) {
+//     _angle = angle;
+// };
+
+std::istream& operator>>(std::istream& in, Right& r)
+{
+    in >> r.value;
+    return in;
+}
