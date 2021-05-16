@@ -11,7 +11,7 @@ class Jump:public Command
     //     float _unit = 0;
 
     public:
-        Jump();
+        // Jump();
         void run();
         //void setUnit(float); comment domment wajkfsbvmx
         friend std::istream& operator >> (std::istream& in, Jump& j);

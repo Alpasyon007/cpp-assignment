@@ -10,7 +10,7 @@ class Forward:public Command
         //float _unit = 0;
     
     public:
-        Forward();
+        // Forward();
         void run();
        // void setUnit(float);
        friend std::istream& operator >> (std::istream& in, Forward& fwd);

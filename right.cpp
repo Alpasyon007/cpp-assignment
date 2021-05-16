@@ -6,7 +6,7 @@
 
 void Right::run()
 {
-    glRotatef(value, 1, 0, 0);
+    glRotatef(value, 0, 0, -1);
 
 }
 

@@ -1,28 +1,31 @@
 #include "repeat.h"
 
 //--------Teammember 2 to complete this section (class definition) ----------
-friend std::istream& operator>>(std::istream& in, Program& prog){
-	int i;
-	char aux;
+
+void Repeat::run()
+{
+	// int b;
+	// int i;
+	// Program pr;
+	for (int i(0); i < value; i++){
+		prog.run();
+	}
+}
+
+std::istream& operator>>(std::istream& in, Repeat& rpt)
+{
+	std::string aux;
 	//Repeat rep;
-	in >> i;
-	in >>  aux;
+	in >> rpt.value;
+	std::cout << rpt.value << std::endl;
+	in >> aux;
 	
-	if (aux=="["){
-		in >> prog;
+	if (aux == "[")
+	{
+		in >> rpt.prog;
 		//rep.run(i); 
-	}
-	
-	
+	}	
+
+	return in;
 }
-
-void run(int i){
-	int b;
-	Program pr;
-	for (b=0; b<i; b++){
-		pr.run;
-	}
-
-}
-
 //----------------------------------------------------------------------------
