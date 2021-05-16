@@ -53,6 +53,8 @@ std::istream& operator>>(std::istream& in, Program& prog) {
 			in >> *rpt;
 			cmd = rpt;
 			prog.cmds.push_back(cmd);
+		} else if (command == "]") {
+
 		} else {
 			std::cerr << "Illegal Command" << std::endl;
 		}
