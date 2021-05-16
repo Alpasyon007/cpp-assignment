@@ -10,10 +10,10 @@ void Forward::run()
 {
     glBegin(GL_LINE_LOOP);
         glVertex3f(0.0f, 0.0f, 0.0f); //start
-        glVertex3f(0.0f, Command::value, 0.0f); //finish
+        glVertex3f(Command::value, 0.0f, 0.0f); //finish
     glEnd();	
 
-    glTranslatef(0.0f,Command::value,0.0f); //move cursor to end point
+    glTranslatef(Command::value , 0.0f , 0.0f); //move cursor to end point
 }
 
 // void Forward::setUnit(float unit) {
