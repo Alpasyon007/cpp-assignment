@@ -3,21 +3,10 @@
 
 #include "command.h"
 
-//--------Teammember 3 to complete this section (class declaration) ----------
-
-class Jump:public Command
-{
-    // private:
-    //     float _unit = 0;
-
+class Jump : public Command {
     public:
-        // Jump();
         void run();
-        //void setUnit(float); comment domment wajkfsbvmx
         friend std::istream& operator >> (std::istream& in, Jump& j);
 };
-
-//----------------------------------------------------------------------------
-
 
 #endif /* JUMP_H_ */

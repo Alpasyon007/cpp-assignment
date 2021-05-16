@@ -5,7 +5,6 @@
 #include <GL/gl.h>
 #include <GL/glut.h>
 #include <vector>
-#include <utility>
 
 #include "left.h"
 #include "right.h"
@@ -13,15 +12,11 @@
 #include "jump.h"
 
 class Program {
-private:
-public:
-	std::vector<Command*> cmds;
-	void run();
-	void getInput(std::string);
+	public:
+		std::vector<Command*> cmds; // Commands Vector to store all the commands
+		void run(); // Run function which runs all the commands stored in the commands vector
 };
 
-
-
-std::istream& operator>>(std::istream& in, Program& prog);
+std::istream& operator>>(std::istream& in, Program& prog); // Read input from the input file
 
 #endif /* PROGRAM_H_ */
