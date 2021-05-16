@@ -8,9 +8,9 @@
 class Repeat: public Command 
 {
 	private:
-	public:
 		Program prog;
 		int value;
+	public:
 		void run();
 		friend std::istream& operator>>(std::istream& in, Repeat& rpt);
 };

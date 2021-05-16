@@ -1,15 +1,13 @@
 #include "repeat.h"
 #include "program.h"
 
-
 void Program::run() {
 	for(auto* cmd: cmds) {
 		cmd->run();
 	}
 }
 
-std::istream& operator>>(std::istream& in, Program& prog)
-{
+std::istream& operator>>(std::istream& in, Program& prog) {
 	while(!in.eof()) {
 		std::string command;
 		Command* cmd;
@@ -23,8 +21,7 @@ std::istream& operator>>(std::istream& in, Program& prog)
 			// in >> f;
 			// cmd = &f;
 			// prog.cmds.push_back(cmd);
-		} 
-		if (command == "RIGHT") {
+		} else if (command == "RIGHT") {
 			Right *r = new Right;
 			in >> *r;
 			cmd = r;
@@ -33,8 +30,7 @@ std::istream& operator>>(std::istream& in, Program& prog)
 			// in >> r;
 			// cmd = &r;
 			// prog.cmds.push_back(cmd);
-		} 
-		if (command == "LEFT") {
+		} else if (command == "LEFT") {
 			Left *l = new Left;
 			in >> *l;
 			cmd = l;
@@ -43,8 +39,7 @@ std::istream& operator>>(std::istream& in, Program& prog)
 			// in >> l;
 			// cmd = &l;
 			// prog.cmds.push_back(cmd);
-		} 
-		if (command == "JUMP") {
+		} else if (command == "JUMP") {
 			Jump *j = new Jump;
 			in >> *j;
 			cmd = j;
@@ -53,12 +48,13 @@ std::istream& operator>>(std::istream& in, Program& prog)
 			// in >> j;
 			// cmd = &j;
 			// prog.cmds.push_back(cmd);
-		} 
-		if (command == "REPEAT") {
+		} else if (command == "REPEAT") {
 			Repeat *rpt = new Repeat;
 			in >> *rpt;
 			cmd = rpt;
 			prog.cmds.push_back(cmd);
+		} else {
+			std::cerr << "Illegal Command" << std::endl;
 		}
 	}
 }
